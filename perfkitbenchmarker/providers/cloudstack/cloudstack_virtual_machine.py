@@ -41,7 +41,7 @@ class CloudStackVirtualMachine(virtual_machine.BaseVirtualMachine):
   CLOUD = providers.CLOUDSTACK
   DEFAULT_ZONE = 'CH-DK-2'
   DEFAULT_MACHINE_TYPE = 'Medium'
-  DEFAULT_IMAGE = 'Linux Debian 9 64-bit'
+  DEFAULT_IMAGE = 'Linux Ubuntu 16.04 LTS 64-bit'
   DEFAULT_USER_NAME = 'ubuntu'
 
 
