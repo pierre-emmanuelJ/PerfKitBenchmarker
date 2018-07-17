@@ -50,15 +50,12 @@ class CsClient(object):
 
         return None
 
-    def get_template(self, template_name, project_id=None):
+    def get_template(self, template_name):
 
         cs_args = {
             'command': 'listTemplates',
             'templatefilter': 'executable'
         }
-
-        if project_id:
-            cs_args.update({'projectid': project_id})
 
 
         templates = self._cs.request(cs_args)
@@ -169,14 +166,11 @@ class CsClient(object):
 
         return None
 
-    def get_virtual_machine(self, vm_name, project_id=None):
+    def get_virtual_machine(self, vm_name):
 
         cs_args = {
             'command': 'listVirtualMachines',
         }
-
-        if project_id:
-            cs_args.update({"projectid": project_id})
 
         vms = self._cs.request(cs_args)
 
@@ -192,9 +186,7 @@ class CsClient(object):
                   zone_id,
                   service_offering_id,
                   template_id,
-                  network_ids=None,
-                  keypair=None,
-                  project_id=None):
+                  keypair=None):
 
         create_vm_args = {
             'command': 'deployVirtualMachine',
@@ -204,14 +196,9 @@ class CsClient(object):
             'name': name,
         }
 
-        if network_ids:
-            create_vm_args.update({"networkids": network_ids})
-
         if keypair:
             create_vm_args.update({'keypair': keypair})
 
-        if project_id:
-            create_vm_args.update({"projectid": project_id})
 
         vm = self._cs.request(create_vm_args)
 
@@ -222,7 +209,6 @@ class CsClient(object):
         cs_args = {
             'command': 'destroyVirtualMachine',
             'id': vm_id,
-            'expunge': 'true'  # Requres root/domain admin
         }
 
         res = self._cs.request(cs_args)
@@ -262,24 +248,17 @@ class CsClient(object):
 
     def create_network(self,
                        name,
-                       network_offering_id,
                        zone_id,
-                       project_id=None,
                        vpc_id=None,
                        gateway=None,
-                       netmask=None,
-                       acl_id=None):
+                       netmask=None):
 
         cs_args = {
             'command': 'createNetwork',
             'name': name,
             'displaytext': name,
             'zoneid': zone_id,
-            'networkofferingid': network_offering_id,
         }
-
-        if project_id:
-            cs_args.update({"projectid": project_id})
 
         if vpc_id:
             cs_args.update({
@@ -375,43 +354,34 @@ class CsClient(object):
         return False
 
 
-    def register_ssh_keypair(self, name, public_key, project_id=None):
+    def register_ssh_keypair(self, name, public_key):
 
         cs_args = {
             'command': 'registerSSHKeyPair',
             'name': name,
-            'publickey': urllib.quote(public_key),
+            'publickey': public_key,
         }
-
-        if project_id:
-            cs_args.update({"projectid": project_id})
 
         res = self._cs.request(cs_args, method='post')
         return res
 
 
-    def unregister_ssh_keypair(self, name, project_id=None):
+    def unregister_ssh_keypair(self, name):
 
         cs_args = {
             'command': 'deleteSSHKeyPair',
             'name': name,
         }
 
-        if project_id:
-            cs_args.update({"projectid": project_id})
-
         res = self._cs.request(cs_args)
         return res
 
-    def get_ssh_keypair(self, name, project_id=None):
+    def get_ssh_keypair(self, name):
 
         cs_args = {
             'command': 'listSSHKeyPairs',
             'name': name,
         }
-
-        if project_id:
-            cs_args.update({"projectid": project_id})
 
         kps = self._cs.request(cs_args)
 
