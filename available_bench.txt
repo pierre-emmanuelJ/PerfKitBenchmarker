@@ -1,0 +1,124 @@
+XXX TODO fix "AssertionError: Unable get disk offering of given size" to unlock some test
+
+ - aerospike: Apache v2 for the client and GNU AGPL v3.0 for the server
+    PASS
+
+ - bonnie++: GPL v2
+    FAIL (ValueError: Benchmark "bonnie++" not valid on os_type "ubuntu1604")
+
+ - cassandra_ycsb: Apache v2
+    FAIL (AssertionError: Unable get disk offering of given size)
+    TODO: can be fix
+
+ - cassandra_stress: Apache v2
+    FAIL (AssertionError: Unable get disk offering of given size)
+    TODO: can be fix
+
+ - cloudsuite3.0: CloudSuite 3.0 license
+    FAIL (ValueError: Benchmark "cloudsuite3.0" not valid on os_type "ubuntu1604")
+
+- cluster_boot: MIT License
+    FAIL (perfkitbenchmarker.errors.MissingOption: cluster_boot.vm_groups.default.cloud
+    is "CloudStack", but cluster_boot.vm_groups.default.vm_spec does not contain a configuration for "CloudStack".).
+    TODO Can be implem for cloudstack (exoscale)
+
+- coremark: EEMBC
+    WIP
+
+- copy_throughput: Apache v2
+    FAIL (AssertionError: Unable get disk offering of given size)
+    TODO: can be fix
+
+ - fio: GPL v2
+    FAIL (AssertionError: Unable get disk offering of given size)
+    
+ - gpu_pcie_bandwidth: NVIDIA Software Licence Agreement
+    FAIL (perfkitbenchmarker.errors.MissingOption: gpu_pcie_bandwidth.vm_groups.default.cloud
+    is "CloudStack", but gpu_pcie_bandwidth.vm_groups.default.vm_spec does not contain a configuration for "CloudStack".).
+    TODO Can be implem for cloudstack (exoscale)
+    
+
+- hadoop_terasort: Apache v2
+    FAIL (perfkitbenchmarker.errors.MissingOption: hadoop_terasort.spark_service.worker_group.cloud
+    is "CloudStack", but hadoop_terasort.spark_service.worker_group.vm_spec does not contain a configuration for "CloudStack".).
+    TODO Can be implem for cloudstack (exoscale)
+
+ - hpcc: Original BSD license
+    PASS
+
+ - hpcg: BSD 3-clause
+    FAIL (perfkitbenchmarker.errors.MissingOption: hpcg.vm_groups.default.cloud
+    is "CloudStack", but hpcg.vm_groups.default.vm_spec does not contain a configuration for "CloudStack".)
+    TODO Can be implem for cloudstack (exoscale)
+
+ - iperf: BSD license
+    PASS
+    
+ - memtier_benchmark: GPL v2
+    FAIL (ValueError: Benchmark "memtier_benchmark" not valid on os_type "ubuntu1604")
+
+ - mesh_network: HP license
+    PASS
+
+
+ - mongodb: Deprecated. GNU AGPL v3.0
+    FAIL (ValueError: Benchmark "mongodb" not valid on os_type "ubuntu1604")
+
+
+ - mongodb_ycsb: GNU AGPL v3.0
+    FAIL (AssertionError: Unable get disk offering of given size)
+    TODO: can be fix 
+    
+
+ - multichase: Apache v2
+    PASS
+    
+ - netperf: HP license
+    PASS
+
+ - oldisim: Apache v2
+    PASS
+
+ - object_storage_service: Apache v2
+    PASS (when Pithos will be ok)
+
+ - pgbench: PostgreSQL Licence
+    FAIL (perfkitbenchmarker.errors.MissingOption: pgbench.managed_relational_db.cloud
+    is "CloudStack", but pgbench.managed_relational_db.disk_spec does not contain a configuration for "CloudStack".)
+     TODO Can be implem for cloudstack (exoscale)
+
+ - ping: No license needed.
+    PASS
+
+ - silo: MIT License
+    PASS
+
+ - scimark2: public domain
+    PASS
+
+ - speccpu2006: SPEC CPU2006
+    FAIL (AssertionError: Unable get disk offering of given size)
+    TODO can be fix
+
+ - SHOC: BSD 3-clause
+     FAIL (ValueError: Benchmark "SHOC" not valid on os_type "ubuntu1604")
+
+ - sysbench_oltp: GPL v2
+    FAIL (ValueError: Benchmark "sysbench_oltp" not valid on os_type "ubuntu1604")
+
+ - TensorFlow: Apache v2
+     FAIL (ValueError: Benchmark "TensorFlow" not valid on os_type "ubuntu1604")
+
+ - tomcat: Apache v2
+     FAIL (ValueError: Benchmark "tomcat" not valid on os_type "ubuntu1604")
+
+ - unixbench: GPL v2
+    FAIL (AssertionError: Unable get disk offering of given size)
+    TODO can be fix
+
+
+ - wrk: Modified Apache v2
+     FAIL (ValueError: Benchmark "wrk" not valid on os_type "ubuntu1604")
+
+ - ycsb (used by mongodb, hbase_ycsb, and others): Apache v2
+    FAIL (ValueError: Benchmark "ycsb" not valid on os_type "ubuntu1604")
