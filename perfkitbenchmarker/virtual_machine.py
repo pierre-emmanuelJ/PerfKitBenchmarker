@@ -711,6 +711,7 @@ class BaseOsMixin(object):
 
   @abc.abstractmethod
   def Install(self, package_name):
+    print(package_name)
     """Installs a PerfKit package on the VM."""
     raise NotImplementedError()
 

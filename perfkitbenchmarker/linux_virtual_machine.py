@@ -278,6 +278,7 @@ class BaseLinuxMixin(virtual_machine.BaseOsMixin):
     self.SetupProxy()
     self._CreateVmTmpDir()
     self._SetTransparentHugepages()
+    self.RemoteCommand('sudo locale-gen')
     if FLAGS.setup_remote_firewall:
       self.SetupRemoteFirewall()
     if self.install_packages:
@@ -1153,6 +1154,7 @@ class DebianMixin(BaseLinuxMixin):
       self._apt_updated = True
 
     if package_name not in self._installed_packages:
+      print(linux_packages.PACKAGES)
       package = linux_packages.PACKAGES[package_name]
       if hasattr(package, 'AptInstall'):
         package.AptInstall(self)

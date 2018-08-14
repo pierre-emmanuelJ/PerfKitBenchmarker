@@ -741,6 +741,7 @@ class AwsVirtualMachine(virtual_machine.BaseVirtualMachine):
     """
     self.Install('aws_credentials')
     self.Install('awscli')
+    self.Install('awscli-plugin-endpoint')
     # TODO(deitz): Add retry logic.
     self.RemoteCommand(GenerateDownloadPreprovisionedDataCommand(
         install_path, module_name, filename))

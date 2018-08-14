@@ -21,12 +21,12 @@ from perfkitbenchmarker import vm_util
 FLAGS = flags.FLAGS
 
 AWS_CREDENTIAL_LOCATION = '.aws'
-DEFAULT_AWS_REGION = 'us-east-1'
+DEFAULT_AWS_REGION = 'ch-dk-2'
 
 # S3 endpoints for a given region can be formed by prefixing the region with
 # 's3.' and suffixing it with '.amazonaws.com'.
-AWS_S3_ENDPOINT_PREFIX = 's3.'
-AWS_S3_ENDPOINT_SUFFIX = '.amazonaws.com'
+AWS_S3_ENDPOINT_PREFIX = 'sos-'
+AWS_S3_ENDPOINT_SUFFIX = '.exo.io'
 
 
 class S3Service(object_storage_service.ObjectStorageService):
@@ -60,7 +60,12 @@ class S3Service(object_storage_service.ObjectStorageService):
 
   def PrepareVM(self, vm):
     vm.Install('awscli')
+    vm.Install('awscli_plugin_endpoint')
     vm.Install('boto')
+    # vm_util.IssueCommand(
+    #     ['sudo', 'aws', 'configure', 'set',
+    #      'plugins.endpoint',
+    #      'awscli_plugin_endpoint'])
 
     vm.PushFile(
         object_storage_service.FindCredentialFile('~/' +
