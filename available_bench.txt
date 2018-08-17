@@ -31,12 +31,12 @@ XXX TODO fix "AssertionError: Unable get disk offering of given size" to unlock 
 
  - fio: GPL v2
     FAIL (AssertionError: Unable get disk offering of given size)
-    
+
  - gpu_pcie_bandwidth: NVIDIA Software Licence Agreement
     FAIL (perfkitbenchmarker.errors.MissingOption: gpu_pcie_bandwidth.vm_groups.default.cloud
     is "CloudStack", but gpu_pcie_bandwidth.vm_groups.default.vm_spec does not contain a configuration for "CloudStack".).
     TODO Can be implem for cloudstack (exoscale)
-    
+
 
 - hadoop_terasort: Apache v2
     FAIL (perfkitbenchmarker.errors.MissingOption: hadoop_terasort.spark_service.worker_group.cloud
@@ -53,7 +53,7 @@ XXX TODO fix "AssertionError: Unable get disk offering of given size" to unlock 
 
  - iperf: BSD license
     PASS
-    
+
  - memtier_benchmark: GPL v2
     FAIL (ValueError: Benchmark "memtier_benchmark" not valid on os_type "ubuntu1604")
 
@@ -67,12 +67,12 @@ XXX TODO fix "AssertionError: Unable get disk offering of given size" to unlock 
 
  - mongodb_ycsb: GNU AGPL v3.0
     FAIL (AssertionError: Unable get disk offering of given size)
-    TODO: can be fix 
-    
+    TODO: can be fix
+
 
  - multichase: Apache v2
     PASS
-    
+
  - netperf: HP license
     PASS
 
